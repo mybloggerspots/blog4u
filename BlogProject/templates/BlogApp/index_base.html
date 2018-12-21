@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{%load blog_tags%}
+{% load staticfiles%}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="shortcut icon" href="{%static "images/favicon.png"%}" type="image/png">
+    <title>Join BLOG4U . BLOG4U</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/content.css" %}">
+  </head>
+  <body class="{%block body_class%}{%endblock%}">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navs">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/signup" type="button" class="navbar-toggle collapsed btn navbar-btn  pull-right" aria-expanded="false" style="color:white; border: 1px solid white;">Sign up</a>
+          <div class="navbar-brand">
+              <div class="logo">
+            <a href="/"><img src="{%static "images/blogo.png"%}" alt="Image not found" height="27"></a>
+              </div>
+              <div class="logo">
+                <h3 id="h3-text">LOG4U</h3>
+              </div>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/#whyblog" id="click-wb">Why BLOG4U?</a></li>
+            <li><a href="/#explore">Explore</a></li>
+            <li><a href="/#addons">Add-ons</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login">Sign in</a></li>
+            <li><a href="/signup">Sign up</a></li>
+            <ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+      </div><!-- /.container-fluid -->
+      </nav>
+      {%block content%}{%endblock%}
+      <!-- Footer -->
+      <section id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+              <ul class="list-unstyled list-inline social text-center">
+                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+              </ul>
+            </div>
+            </hr>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+              <p class="h5">&copy All right Reversed &ensp;<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">2018 BLOG4U, Inc.</a></p>
+            </div>
+            </hr>
+          </div>
+        </div>
+      </section>
+<!-- ./Footer -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

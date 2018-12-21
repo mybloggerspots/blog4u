@@ -1,0 +1,281 @@
+html{
+  scroll-behavior: smooth;
+  overflow: auto!important;
+max-height: 100% !important;
+}
+body{
+  background: #383a3d;
+  overflow: auto!important;
+max-height: 100% !important;
+  /* background: #383a3d; */
+}
+/* .content{
+  overflow:visible;
+  position: relative;
+}
+.content .signupheader{
+  display : inline-block;
+  height : 80%;
+  padding: 160px 0px 30px 50px;
+
+}
+.content .signupform{
+  display : inline-block;
+ height : 80%;
+ padding: 100px 100px 30px 80px;
+} */
+/* @media (max-width: 600px) {
+  .left{
+    height:5%
+  }
+  .right{
+    height:5%
+  }
+} */
+.navbar-brand  {
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+h1{
+  color: white;
+  font-weight: 400;
+  font-size: 4.5em;
+}
+p{
+  color: grey;
+  font-weight: normal;
+  font-size: 1.8em;
+}
+.nav a{
+    color: white;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color : white;//desired color here
+}
+/* .nav li{
+    padding-right:5px;
+} */
+.logo{
+  /* display: inline-flex; */
+  display: inline-block;
+  margin-top: 0px;
+  padding-top: 0px;
+  vertical-align:bottom;
+}
+
+#h3-text{
+  display: inline-block;
+  color:#FFFFFF;
+  font-size:1.2em;
+  font-family:Audrey;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+/* .navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+} */
+/* .navbar .navbar-collapse {
+  text-align: center;
+} */
+/* .brand{
+  padding-left: 250px;
+  padding-right: 0px;
+  margin-right: 0px;
+} */
+#whyblog{
+  background: white;
+  overflow:visible;
+  position: relative;
+}
+#whyblog{
+  padding-top: 80px;
+  padding-bottom: 90px;
+}
+#whyblog h2{
+  color: black;
+  text-align: center;
+  font-size: 3.2em;
+  font-weight: 600;
+}
+#whyblog p{
+  font-size: 1.3em;
+  font-family: 'Karla', sans-serif;
+  letter-spacing: 1px;
+}
+#whyblog img{
+  border-radius: 50%;
+}
+#explore{
+  background-color: #383a3d;
+  overflow: hidden;
+    position: relative;
+}
+#explore h2{
+  color: white;
+  text-align: center;
+  font-size: 3.2em;
+  font-weight: 600;
+}
+ #explore{
+  padding-top: 80px;
+  padding-bottom: 90px;
+}
+#explore p{
+  font-size: 1.4em;
+  color: white;
+  font-family: 'Karla', sans-serif;
+  letter-spacing: 1px;
+}
+#addons h2{
+  color: black;
+  text-align: center;
+  font-size: 3.2em;
+  font-weight: 600;
+}
+#addons{
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+#addons{
+  padding-top: 80px;
+  padding-bottom: 90px;
+}
+#addons p{
+  font-size: 1.4em;
+  font-family: 'Karla', sans-serif;
+  letter-spacing: 1px;
+}
+/* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #grey;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #383a3d !important;
+    padding-bottom: 5px;
+    padding-top: 25px;
+}
+#footer .h5{
+	  color:grey;
+}
+#footer a {
+    color: grey;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#grey;
+}
+#footer ul.social li a:hover{
+	color:#grey;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:480px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+.page {
+  background: #383a3d;
+  margin: 20px 0
+}
+
+.wrapper {
+  background: #383a3d;
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+  min-height: 600px;
+}
+
+.content-wrapper {
+  float: left;
+  width: 100%;
+}
+.content {
+  margin-right: 500px;
+  clear: both;
+  min-height: 400px;
+  padding: 160px 0px 30px 50px;
+}
+
+.sidebar {
+  position: relative;
+  width: 350px;
+  margin-left: -400px;
+  float: right;
+  overflow: hidden;
+  min-height: 400px;
+  padding:0px 0px 0px 0px;
+  margin-top: 70px;
+  margin-right: 50px;
+}
+@media only screen and (max-width: 600px) {
+  body{
+    font-size: 12px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding: 70px 0px 0px 0px;
+    margin-right: 0;
+    margin-bottom:0px;
+  }
+  #footer{
+    padding-top: 25px;
+    padding-bottom: 5px;
+  }
+}

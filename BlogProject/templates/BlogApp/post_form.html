@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+{%load blog_tags%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{%static "images/favicon.png"%}" type="image/png">
+    <title>Write your post</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static "css/login.css"%}">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus|Marcellus+SC" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" id="lmarg">
+      <div class="center" align="center">
+        <img src="{%static "images/blogo.png"%}" alt=""><br>
+        {%if post_sent%}
+          {%if post_update%}
+          <h2>Post updated successfully..</h2><hr><br>
+          <h4>"{{post_title}}" post updated...</h4><br>
+          {%else%}
+          <h2>Post Created successfully..</h2><hr><br>
+          <h4>"{{post_title}}" post created...</h4><br>
+          {%endif%}
+          <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-success">
+              <div class="panel-body" >
+                <p align='center'><a href="/userposts">Back to home.</a></p>
+              </div>
+            </div>
+          </div>
+        {%else%}
+        <h3>Write on your own post</h3>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-success">
+          <div class="panel-body" >
+            <form method="post">
+              {%csrf_token%}
+
+              {{ form.non_field_errors }}
+              <div class="form-group">
+
+
+                  <div class="fieldWrapper">
+                      {{ form.title.errors }}
+                      {{form.title.label_tag}}
+                      {{ form.title }}
+                  </div><br>
+                  <div class="fieldWrapper">
+                      {{ form.category.errors }}
+                      {{form.category.label_tag}}
+                      {{ form.category }}
+                  </div><br>
+                  <div class="fieldWrapper">
+                      {{ form.status.errors }}
+                      {{form.status.label_tag}}
+                      {{ form.status }}
+                  </div><br>
+                  <div class="fieldWrapper">
+                      {{ form.tags.errors }}
+                      {{form.tags.label_tag}}
+                      <input type="text" class="form-control" {{form.tags}}
+                  </div><br>
+
+                  <div class="fieldWrapper">
+                      {{ form.body.errors }}
+                      {{form.body.label_tag}}
+                      {{ form.body }}
+                  </div><br>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-block float-right" name="button">Submit the post</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-success">
+          <div class="panel-body" >
+            <p align='center'>Not interested? <a href="/userposts">Back to home.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endif%}
+</body>
+</html>

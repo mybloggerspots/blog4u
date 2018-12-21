@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends "BlogApp/base.html" %}
+{% load staticfiles %}
+{% block title %}{{post.title}}{% endblock title %}
+{% block content %}
+  <h2>{{post.title}}</h2><hr>
+  <p id='caption'>By: {{post.author|title}}&emsp;|&emsp;{{post.publish}}</p>
+  <p class="mainp">{{post.body|linebreaks}}</p>
+  <a href="/{{post.id}}/share" class='btn btn-success float-right' style="float:right">Share Post By Email</a><br><br><hr>
+  {% with comments.count as comments_count%}
+  <h4>{{comments_count}} Comment{{comments_count|pluralize}}</h4><br>
+  {%endwith%}
+  {%if csubmit%}
+    <form method="post">
+      {%csrf_token%}
+      {%for field in e_form%}
+      <div class="form-group">
+      <div class="comment-info"><span id="name-logo">{{logged_user|title|first}}</span>{{field}}</div>
+      </div>
+      {%endfor%}
+      <button type="submit" class="btn btn-primary" style="float:right">Comment</button><br>
+    </form><br><br>
+    {%else%}
+    <form method="post">
+      {%csrf_token%}
+      {%for field in form%}
+      <div class="form-group">
+        <div class="comment-info"><span id="name-logo">{{logged_user|title|first}}</span>{{field}}</div>
+      </div>
+      {%endfor%}
+      <button type="submit" class="btn btn-primary" style="float:right">Comment</button><br>
+    </form><br><br>
+  {%endif%}
+  {%if comments%}
+    {%for comment in comments%}
+      <div class="comment-info"><span id="name-logo">{{comment.name|title|first}}</span>&emsp;{{comment.name|title}} . {{comment.created}}</div>
+      <div class="comment"><p>{{comment.body|linebreaks}}</p><div>{%if not forloop.last%}<hr>{%endif%}
+    {%endfor%}
+  {%endif%}
+{% endblock content %}

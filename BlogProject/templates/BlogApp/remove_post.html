@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%extends 'BlogApp/base.html'%}
+{%load staticfiles%}
+{%block title%}Remove the post{%endblock%}
+{%block content%}
+  <div class="container-fluid" style="background:white;">
+    {%if post_delete%}
+    <div class="message">
+        <h2>Post Deleted Successfully...</h2><br>
+        <h4>Post with title '{{post.title|title}}' has been deleted successfully..</h4><br><br><br>
+        <p align='center'><a class="btn btn-default btn-md" href="/userposts">Back to home.</a></p>
+    </div><br><br><br>
+    {%else%}
+    <h4>Are you sure?</h4><br>
+    <h5>Are you sure you want to delete the selected post? All of the following objects and their related items will be deleted:</h5><br>
+    {%if post%}
+    <h4>Summery:</h4>
+      <ul>
+        <li> <h6>No.of tags: {{post.tags.count}}</h6> </li>
+        <li> <h6>No.of comments: {{post.comments.count}}</h6> </li>
+      </ul><br>
+    <h4>Objects:</h4>
+    <ul>
+      <li><h6>Post:&ensp;{{post.title}}</h6></li>
+      {% for tag in post.tags.all %}
+        <li> <h6>Tagged item:&ensp;{{post.title}} tagged with ' {{tag.name}} '</h6> </li>
+      {% endfor %}
+    </ul><br>
+    <a href="/{{post.id}}/remove" class="btn btn-danger btn-md">Yes, I'm sure</a>&emsp;&emsp;
+    <a href="/userposts" class="btn  btn-primary btn-md">No, take me back</a><br><br><br>
+    {%endif%}
+    {%endif%}
+  </div>
+  {%endblock%}

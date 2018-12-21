@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%extends 'BlogApp/index.html'%}
+{%load staticfiles%}
+{%block content%}
+  <div class="container-fluid" style="background:white;width:100%;padding-top:0px;margin-top:60px;">
+    <div class="signup">
+      <div class="col-md-5 col-md-offset-3">
+        <h1 style="color:black;font-size:3.5em;font-family:Audrey">Join BLOG4U</h1>
+        <h4 style="font-family:karla;">Innovative way to share your views</h4><hr>
+        <h3 style="font-family:verdana">Create your personal account</h3><br>
+        <form method="post">
+          {%csrf_token%}
+            {% for error in form.non_field_errors %}
+            {%if error%}
+            <div class="alert alert-danger alert-dismissible fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{error}}
+            </div>
+            {%endif%}
+            {% endfor %}
+            {% for field in form %}
+            {%if field.errors%}
+            <div class="alert alert-danger alert-dismissible fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{field.errors}}
+            </div>
+            {%endif%}
+            <div class="form-group">
+                {{field.label_tag}}
+                {{field}}
+                {% if field.help_text %}
+                  <small class="form-text text-muted" style="font-family:verdana;font-size:11.5px">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+          <button type="submit" class="btn btn-success btn-lg btn-lg" name="button">Sign up for BLOG4U</button>
+        </form><br>
+      </div>
+    </div>
+  </div>
+{%endblock%}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{%load blog_tags%}
+{% load staticfiles%}
+<html lang="en" dir="ltr">
+  <head>
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="shortcut icon" href="{%static "images/favicon.png"%}" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top"role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="above-nav">
+              <div class="logo">
+                <img src="{%static "images/blogo.png"%}" alt="Image not found" height="40">
+              </div>
+              <div class="logo">
+                <h1 id="h1-text">LOG4U</h1>
+              </div>
+              <div align:'center'><p id="hcap">THE WAY WE EXPRESS</p></div>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" id="nav-left">
+            <li><a href="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></span></a></li>
+            <li><a href="/politics">Politics</a></li>
+            <li><a href="/films">Films</a></li>
+            <li><a href="/technology">Technology</a></li>
+            <li><a href="/sports">Sports</a></li>
+            <li><a href="/business">Bussiness</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" id="nav-right">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false" style="background:#1a1a1a;color:white;"><i class="fa fa-user fa-lg" aria-hidden="true"></i>
+                &nbsp;{{user.first_name}}&ensp;<span class="caret"></span></button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li> <a href="#"></a></li>
+                <li><a href="#"><div class="comment-info">&ensp;<span id="name-logo">{{user|title|first}}</span>{{field}}&ensp;{{user.email}}</a></div></li>
+                <li> <a href="#"></a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/post"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;Create a new post</a></li>
+                <li> <a href="#"></a></li>
+                <li><a href="/userposts"><i class="fa fa-folder-open" aria-hidden="true">&ensp;</i>My posts&nbsp;({{postcount}})</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>&ensp;SignOut</a></li>
+              </ul>
+            </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+      <div class="page">
+        <div class="wrapper">
+          <div class="content-wrapper">
+            <div class="content">
+              {%block content%}{%endblock%}
+            </div>
+          </div>
+          <div class="sidebar">
+            <h3 id="sidebar">BLOG4U <small style="font-weight:bold">Stay tuned for updates</small></h3><hr class="bold">
+            <a href="/" style="color:#333333">The total number of posts <span class="badge">{%total_post_count %}</span></a><br><br>
+            <div id="block"><span>Most recent posts&nbsp;</span></div><br> {%latest_posts 3%}<br>
+            <div id="block"><span>Most commented posts</span></div><br>
+            {%get_most_commented_posts as most_commented_posts%}
+            {%for post in most_commented_posts%}
+            <a href="{{post.get_absolute_url}}" style="color:#333333">{{post.title}}</a>{%if not forloop.last%}<hr class="dashed">{%endif%}
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

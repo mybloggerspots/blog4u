@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{%static "images/favicon.png"%}" type="image/png">
+    <title>Sign in to BLOG4U . BLOG4U</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{%static "css/login.css"%}">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus|Marcellus+SC" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" id="lmarg">
+      <div class="center" align="center">
+        <img src="{%static "images/blogo.png"%}" alt=""><br><br>
+        <h3>Sign in to BLOG4U</h3>
+      </div>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-success">
+          <div class="panel-body" >
+            <form method="post">
+              {%csrf_token%}
+              {% for error in form.non_field_errors %}
+              {%if error%}
+              <div class="alert alert-danger alert-dismissible fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{error}}
+              </div>
+              {%endif%}
+              {% endfor %}
+              {% for field in form %}
+              {%if error%}
+              <div class="alert alert-danger alert-dismissible fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  {{field.errors}}
+              </div>
+              {%endif%}
+              <div class="form-group">
+                  {{field.label_tag}}
+                  {{field}}
+              </div>
+              {% endfor %}
+                <button type="submit" class="btn btn-success btn-block"  name="button">Sign in</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-success">
+          <div class="panel-body" >
+            <p align='center'>New to BLOG4U? <a href="/signup">Create an account.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

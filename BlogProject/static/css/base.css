@@ -1,0 +1,227 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background:url("https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c63357d1e6bdc82b5f166c5fb8314bb5&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* .page{
+  padding-left: 0px;
+  width: 100%;
+} */
+.row-content {
+  width:70%;
+  width: 780px;
+  padding-bottom:50px;
+  margin-top: 0px;
+  padding: 15px 10px;
+  background: #FFFFFF;
+  border: 1px solid #8D9AB0;
+  padding-bottom: 15px;
+  margin-right:0px;
+  padding-left: 30px;
+}
+
+/* Set gray background color and 100% height */
+ .sidenav {
+  float: right;
+  width: 29%;
+  background: #FFFFFF;
+  padding:0px 10px 20px 10px;
+  border: 1px solid #8D9AB0;
+   width: 330px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+hr.dashed {
+  border-top: 1px dashed #8c8b8b;
+  margin-top: 7px;
+  margin-bottom:7px;
+}
+#caption{
+  color: blue;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+h1 { color: #1a1a1a; font-size: 4em; font-family: 'Signika', sans-serif; padding-bottom: 10px;font-weight: 600;}
+h2{
+  padding-bottom: 10px;
+  color: #1a1a1a;
+  font-size: 2.0em
+}
+hr{
+  padding-bottom: 10px;
+}
+hr.bold {
+  height: 5px; border: 0; box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  padding-top: -5px;
+ }
+ hr.dotted {
+	border-top: 1px dotted #8c8b8b;
+}
+.mainp{
+  border-left: #bdc3c7 solid 5px;
+  padding-left: 5px;
+}
+#sidebar{
+  color: #1a1a1a;
+  padding-top: 5px;
+  font-family: Audrey;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 800;
+}
+.navbar-brand > img {
+  max-height: 120%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.navbar-inverse{
+  background: #1a1a1a;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color : white;//desired color here
+}
+.navbar a{
+  font-size: 1.1em;
+}
+#nav-left{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.0em;
+}
+#nav-right{
+    text-align: center;
+    margin-top: 20px;
+}
+#block{
+  font-size: 1.2em;
+  text-align: left;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  color:white;
+  background:grey;
+  padding-top:5px;
+}
+#name-logo {
+  padding: 12px;
+  font-size: 14px;
+  width:40px;
+  padding-right: 0px;
+  margin-top: 0px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: white;
+  background-color: #3762a8;
+  border: 1px;
+  padding-right: 10px;
+  vertical-align: baseline;
+}
+.comment p{
+  padding-left: 43px;
+}
+.comment-info{
+  /* display: inline-flex; */
+  /* vertical-align: bottom; */
+}
+.logo{
+  /* display: inline-flex; */
+  display: inline-block;
+  margin-top: 0px;
+  padding-top: 0px;
+  vertical-align:bottom;
+}
+.above-nav{
+  /* height: 80px; */
+  /* width: 100%; */
+  display: inline-block;
+  /* background-color:#1a1a1a; */
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 40px;
+}
+#hcap{
+  padding-top: 0px;
+  display: inline-block;
+  color:#FFFFFF;
+  font-size:11px;
+  font-weight: bold;
+  font-family:Audrey;
+  text-align: center;
+  letter-spacing: 1px;
+  border-top:2px solid #FFFFFF;
+  border-bottom:2px solid #FFFFFF;
+}
+#h1-text{
+  display: inline-block;
+  color:#FFFFFF;
+  font-size:2.2em;
+  font-family:Audrey;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  vertical-align:bottom;
+}
+.message{
+  text-align: center;
+}
+.dropdown-menu {
+    width: 250px !important;
+    height: 200px !important;
+    text-align: left;
+    float: right;
+    width:200px; left:50%; margin-left:-100px;
+
+}
+.page {
+  margin: 20px 0
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+  min-height: 100%;
+}
+
+.content-wrapper {
+  float: left;
+  width: 100%;
+}
+.content {
+  margin-right: 320px;
+  clear: both;
+  min-height: 600px;
+  padding-right: 20px;
+}
+
+.sidebar {
+  position: relative;
+  width: 330px;
+  margin-left: -330px;
+  float: right;
+  overflow:auto;
+  background: grey;
+  background: #f2f2f2;
+  color: #eee;
+  min-height: 600px;
+  padding:0px 20px 0px 20px;
+  margin-top: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    margin-right: 0;
+  }
+}

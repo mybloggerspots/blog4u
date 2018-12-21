@@ -1,0 +1,16 @@
+#lmarg{
+  margin-top: 20px;
+}
+h3{
+  text-align: center;
+  color: black;
+  float: none;
+  font-family: 'Marcellus', serif;
+}
+body{
+  background: url("https://i2.wp.com/mavgarage.com/wp-content/uploads/2018/06/solid-light-grey-wallpaper-light-grey-solid-color-printed-backdrop-backdrops-light-grey-solid-color-printed-backdrop-wallpapers-for-iphone-x-black.jpg?resize=450,300");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}

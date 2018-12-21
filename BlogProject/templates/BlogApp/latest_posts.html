@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      {%for post in new_posts%}
+        <p><a href="{{post.get_absolute_url}}" style="color:#333333">{{post.title}}</a></p>
+        {%if not forloop.last%}<hr class="dashed">{%endif%}
+      {%endfor%}
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{%static "images/favicon.png"%}" type="image/png">
+    <title>Share post by email</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static "css/login.css"%}">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus|Marcellus+SC" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" id="lmarg">
+      <div class="center" align="center">
+        <img src="{%static "images/blogo.png"%}" alt=""><br><br>
+        {%if sent%}
+          <h1>Email Sent successfully..</h1><hr><br>
+          <h4>"{{post.title|title}}" post sent by mail</h4><br>
+          <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-success">
+              <div class="panel-body" >
+                <p align='center'><a href="/home">Back to home.</a></p>
+              </div>
+            </div>
+          </div>
+        {%else%}
+        <h3>Share Post "{{post.title|title}}" by mail</h3><br>
+      </div>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-success">
+          <div class="panel-body" >
+            <form method="post">
+              {%csrf_token%}
+              {%for field in form%}
+              <div class="form-group">
+                {{field.label_tag}}
+                {{field}}
+              </div>
+              {%endfor%}
+              <button type="submit" class="btn btn-success btn-block float-right" name="button">Share Post</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-success">
+          <div class="panel-body" >
+            <p align='center'>Not interested? <a href="/home">Back to home.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endif%}
+</body>
+</html>

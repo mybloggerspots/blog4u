@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+{%extends 'BlogApp/index_base.html'%}
+{%load staticfiles%}
+{%block content%}
+<div class="container">
+  <div class="page">
+    <div class="wrapper">
+      <div class="content-wrapper">
+        <div class="content">
+          <h1>Build for <br>Blog Readers</h1><br>
+          <p>BLOG4U is a Blog that was inspired by the blog readers. This site is the best spot for the blog lovers to
+          read all type of posts. It even allowes you to share your views as comments and enhances the readability of posts. </p>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="panel-group">
+          <div class="panel panel-success">
+            <div class="panel-body">
+              <form method="post">
+                {%csrf_token%}
+                  {% for error in form.non_field_errors %}
+                  {%if error%}
+                  <div class="alert alert-danger alert-dismissible fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      {{error}}
+                  </div>
+                  {%endif%}
+                  {% endfor %}
+                  {% for field in form %}
+                  {%if field.errors%}
+                  <div class="alert alert-danger alert-dismissible fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      {{field.errors}}
+                  </div>
+                  {%endif%}
+                  <div class="form-group">
+                      {{field.label_tag}}
+                      {{field}}
+                      {% if field.help_text %}
+                        <small class="form-text text-muted" style="font-family:verdana;font-size:11.5px">{{ field.help_text }}</small>
+                      {% endif %}
+                  </div>
+                  {% endfor %}
+                <button type="submit" class="btn btn-success btn-lg btn-block" name="button">Sign up for BLOG4U</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="whyblog" class="whyblogcontent">
+  <div class="container">
+    <h1 style="font-family:Audrey;text-align:center;color:black">Why BLOG4U?&emsp;<small style="font-weight:bold">We publish...You cherish</small></h1><br><br><br>
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/toi.png"%}" alt="Times Of India">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/ndtv.png"%}" alt="NDTV India">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/itd.jpg"%}" alt="India Today">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/iep.png"%}" alt="Indian Express">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/thu.jpg"%}" alt="The Hindu">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/dc.jpg"%}" alt="Deccan Chronical">
+          </a>
+        </div>
+      </div><br><br>
+    <p>For every problem, you want some ' Solution ', with an ' Explanation ' that may leads to a ' Revelution... '<br> BLOG4U - ' We publish...You cherish... </p><p>We follow the best magazines in order to make our articles to be genuine.
+      We belive that the world has to be explored through  blogs in-time, accurately.We never restrict the user blogger to follow up our posts, moreover we allow our blogger to
+    create their own posts that could be explored by anyone in the wold.</p>
+    <p> Our blogger has a flexible environment to add his own post, if somthing wrong he feels in post,
+       he can edit the post and even able to remove that post. Our blogger can share any post through mail and even can cooment on that post.</p>
+  </div>
+</div>
+<div id="explore">
+  <div class="container">
+    <h2 style="font-family:Audrey;">What can you explore on BLOG4U?</h2><br><br><br>
+    <div class="row">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+        <a href="#" class="thumbnail">
+          <img src="{%static "images/news.png"%}" alt="Times Of India">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+        <a href="#" class="thumbnail">
+          <img src="{%static "images/technologies.jpg"%}" alt="NDTV India">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+        <a href="#" class="thumbnail">
+          <img src="{%static "images/politics.png"%}" alt="India Today">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+        <a href="#" class="thumbnail">
+          <img src="{%static "images/sports.png"%}" alt="Indian Express">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+        <a href="#" class="thumbnail">
+          <img src="{%static "images/films.jpg"%}" alt="Indian Express">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+        <a href="#" class="thumbnail">
+          <img src="{%static "images/bussiness.png"%}" alt="The Hindu">
+        </a>
+      </div>
+      </div><br><br>
+      <p>BLOG4U started to blog out all the common aspects and issues. You will find all the articles and posts about the Politics, Sports, Business, Technology and Films.
+      We just follow the latest newsletters so that every blogger gets to know about those and thus we collect the views of every individual in our group.</p>
+  </div>
+</div>
+  <div id="addons">
+    <div class="container">
+      <h2 style="font-family:Audrey">Add-ons on BLOG4U?</h2><br><br>
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/lifestyle.png"%}" alt="The Hindu">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/medical.jpg"%}" alt="Deccan Chronical">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/history.jpg"%}" alt="Times Of India">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/articles.png"%}" alt="NDTV India">
+          </a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/crimes.jpg"%}" alt="India Today">
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail">
+            <img src="{%static "images/tours.jpg"%}" alt="Deccan Chronical">
+          </a>
+        </div>
+        </div><br><br>
+        <p>BLOG4U started to move ahead with the new aspects and wants to speak on those. We started to get on articles about Medial, Crimes, History, Lifestyle, and Tourism.
+        Our Blogger can express his views on these aspects. Aspect related articles will be helpful to students, researchers, foodies, explorers, reporters and the travellers.</p>
+  </div>
+</div>
+{%endblock%}
